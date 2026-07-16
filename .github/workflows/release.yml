@@ -42,8 +42,10 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
 
+      # Cargo.lock is added once the project is bootstrapped. Until then, the
+      # first release must be allowed to resolve the dependency graph.
       - name: Build release binary
-        run: cargo build --release --locked
+        run: cargo build --release
 
       - name: Package Unix binary
         if: runner.os != 'Windows'
