@@ -1,6 +1,10 @@
 # vu
 
-`vu` is the deliberately small, download-only part of a Python package workflow.
+`vu` is a deliberately small PyPI artifact downloader, and the name is intentionally
+`uv` backwards. It started as a joke about the `uv download` command I wanted to
+type: rather than becoming another package manager, `vu` does only the download
+part of a Python package workflow.
+
 It fetches release artifacts from the PyPI JSON API, verifies their SHA-256 digest,
 and never creates an environment, installs a package, or resolves dependencies.
 
